@@ -30,8 +30,8 @@
     </dependency>
   </dependencies>
 
-  <modules>
-    <module>subModule1</module>
-    <module>subModule2</module>
-  </modules>
-</project>
+
+
+
+
+
