@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>parent</groupId>
+  <artifactId>A</artifactId>
+  <packaging>pom</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Maven Webapp</name>
+  <!--url>http://maven.apache.org</url-->
+
+  <distributionManagement>
+    <repository>
+	    <id>releases</id>
+	     <name>Releases</name>
+      <url>http://127.0.0.1:8081/nexus/content/repositories/releases/</url>
+    </repository>
+    <snapshotRepository>
+	    <id>snapshots</id>
+	    <id>snapshot</id>
+      <url>http://127.0.0.1:8081/nexus/content/repositories/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+
+
+  <dependencies>
+    <dependency>
+      <groupId>com.oracle</groupId>
+      <artifactId>ojdbc5</artifactId>
+      <version>11.2.0.1</version>
+    </dependency>
+  </dependencies>
+
+  <modules>
+    <module>subModule1</module>
+    <module>subModule2</module>
+  </modules>
+</project>

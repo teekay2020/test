@@ -1,0 +1,58 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0                                                           http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <mirrors>
+        <mirror>
+        <!--This sends everything else to /public -->
+            <id>nexus</id>
+            <mirrorOf>*</mirrorOf>
+            <url>http://localhost:8081/nexus/content/groups/public</url>
+        </mirror>
+    </mirrors>
+
+    <activeProfiles>
+        <!--make the profile active all the time -->
+        <activeProfile>nexus</activeProfile>
+    </activeProfiles>
+
+    <profiles>
+        <profile>
+            <id>local</id>
+             <repositories>
+              <repository>
+                <id>nexus</id>
+                <name>libs-release</name>
+              <url>http://url to your local Nexus/artifactory/libs-release</url>
+            </repository>
+       </repositories>
+
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>central</id>
+                    <url>http://maven.apache.org</url>
+                    <releases><enabled>true</enabled></releases>
+                    <snapshots><enabled>true</enabled></snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+
+    <servers>
+      <server>
+       <id>releases</id>
+       <username>admin</username>
+       <password>admin123</password>
+      </server>
+      <server>
+        <id>snapshots</id>
+        <username>admin</username>
+        <password>admin123</password>
+      </server>
+    </servers>
+
+</settings>
+
+  <activeProfiles>
+    <activeProfile>local</activeProfile>
+  </activeProfiles>
